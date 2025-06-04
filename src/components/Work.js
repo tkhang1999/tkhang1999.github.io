@@ -1,3 +1,4 @@
+import leapToolsImg from "../images/leap-tools.png";
 import sfuImg from "../images/sfu.png";
 import gsImg from "../images/goldman-sachs.png";
 import paypalImg from "../images/paypal.png";
@@ -11,6 +12,32 @@ const Work = () => {
       <div className="work__list bd-container">
         <div className="work__container">
           <div className="work__grid">
+            <img
+              className="work__img"
+              src={leapToolsImg}
+              alt="leap-tools-logo"
+            />
+            <p className="work__title">
+              Software Developer @{" "}
+              <a className="external__link" href="https://www.leaptools.com/">
+                Leap Tools
+              </a>{" "}
+              <br />
+              <i>Nov 2024 - June 2025</i>
+            </p>
+          </div>
+          <p className="work__text">
+            Developed Roomvo PRO, a CRM platform tailored for flooring
+            professionals to boost sales, streamline interactions, and improve
+            customer decisions.
+            <br />
+            <br />
+            <i>Tech stack: Python, TypeScript, Django, React, Bazel</i>
+          </p>
+        </div>
+
+        <div className="work__container">
+          <div className="work__grid">
             <img className="work__img" src={sfuImg} alt="sfu-logo" />
             <p className="work__title">
               Research Assistant @{" "}
@@ -18,13 +45,13 @@ const Work = () => {
                 SFU
               </a>{" "}
               <br />
-              <i>Sep 2023 - Present</i>
+              <i>Sep 2023 - June 2025</i>
             </p>
           </div>
           <p className="work__text">
-            Conduct research on concolic/symbolic execution for Rust, formal
-            verification of the L2CAP layer in Bluetooth, and automated program
-            repair using LLMs.
+            Conducted research on concolic/symbolic execution for Rust, formal
+            verification of the L2CAP state machine in Bluetooth, and automated
+            program repair using LLMs.
             <br />
             <br />
             <i>Tech stack: Rust, Dafny, C++, Linux</i>
