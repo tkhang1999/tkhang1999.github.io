@@ -7,7 +7,7 @@ describe("test Work component", () => {
 
     expect(screen.getByTestId("work")).toBeTruthy();
     expect(screen.getAllByRole("heading").length).toEqual(1);
-    expect(screen.getAllByRole("link").length).toEqual(6);
-    expect(screen.getAllByRole("paragraph").length).toEqual(12);
+    expect(screen.getAllByRole("link").length).toEqual(7);
+    expect(screen.getAllByRole("paragraph").length).toEqual(14);
   });
 });
