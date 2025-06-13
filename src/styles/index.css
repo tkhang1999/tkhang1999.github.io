@@ -494,6 +494,12 @@ body.dark__theme {
   .work__list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .work__container:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 2rem) / 2);
+  }
 }
 
 @media screen and (min-width: 1024px) {
