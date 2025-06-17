@@ -1,8 +1,8 @@
-# about-me
+# tkhang1999.github.io
 
-![GitHub CI](https://img.shields.io/github/actions/workflow/status/tkhang1999/about-me/cicd.yml?branch=master)
-![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/tkhang1999/about-me/master)
-![CodeFactor Code Quality](https://img.shields.io/codefactor/grade/github/tkhang1999/about-me/master)
+![GitHub CI](https://img.shields.io/github/actions/workflow/status/tkhang1999/tkhang1999.github.io/cicd.yml?branch=master)
+![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/tkhang1999/tkhang1999.github.io/master)
+![CodeFactor Code Quality](https://img.shields.io/codefactor/grade/github/tkhang1999/tkhang1999.github.io/master)
 
 This is my responsive personal website built using React and CSS
 

@@ -1,8 +1,8 @@
 {
-  "name": "about-me",
+  "name": "tkhang1999.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tkhang1999.github.io/about-me/",
+  "homepage": "https://tkhang1999.github.io/",
   "dependencies": {
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
