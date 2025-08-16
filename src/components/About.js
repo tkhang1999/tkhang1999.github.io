@@ -12,17 +12,15 @@ const About = () => {
         <div>
           <h2 className="about__subtitle">Hi there!</h2>
           <p className="about__text">
-            My name is Khang Le, and I am currently working as a Research
-            Assistant at Simon Fraser University (SFU), focusing on projects
-            related to software engineering, machine learning, and program
-            verification.
+            My name is Khang Le and I'm currently working as a Software
+            Development Engineer at Amazon Web Services (AWS), where I build
+            scalable systems and solve complex engineering challenges.
             <br />
             <br />
-            Previously, I graduated from Nanyang Technological University (NTU)
-            with a Bachelor's degree in Computer Science, followed by several
-            professional working experiences as a software engineer. In my free
-            time, I enjoy cooking, jogging, and playing table tennis and
-            badminton.
+            Previously, I earned my Master's from Simon Fraser University (SFU)
+            and Bachelor's from Nanyang Technological University (NTU), both in
+            Computer Science. When I'm not coding, I enjoy cooking, bouldering,
+            and playing table tennis and badminton.
           </p>
         </div>
       </div>

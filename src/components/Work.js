@@ -1,3 +1,4 @@
+import awsImg from "../images/aws.png";
 import leapToolsImg from "../images/leap-tools.png";
 import sfuImg from "../images/sfu.png";
 import gsImg from "../images/goldman-sachs.png";
@@ -10,6 +11,28 @@ const Work = () => {
     <section className="work section" id="work" data-testid="work">
       <h2 className="section-title">Work Experience</h2>
       <div className="work__list bd-container">
+        <div className="work__container">
+          <div className="work__grid">
+            <img className="work__img" src={awsImg} alt="aws-logo" />
+            <p className="work__title">
+              Software Engineer @{" "}
+              <a className="external__link" href="https://aws.amazon.com/">
+                AWS
+              </a>{" "}
+              <br />
+              <i>Jun 2025 - Present</i>
+            </p>
+          </div>
+          <p className="work__text">
+            Designed and built high-performance microservices processing 10M+
+            payment collection transactions monthly, ensuring seamless operation
+            and improved customer experience.
+            <br />
+            <br />
+            <i>Tech stack: AWS, Java, TypeScript, Spring</i>
+          </p>
+        </div>
+
         <div className="work__container">
           <div className="work__grid">
             <img
