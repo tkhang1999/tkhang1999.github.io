@@ -6,7 +6,7 @@ describe("test Projects component", () => {
     render(<Projects />);
 
     expect(screen.getByTestId("projects")).toBeTruthy();
-    expect(screen.getAllByRole("heading").length).toEqual(4);
-    expect(screen.getAllByRole("link").length).toEqual(4);
+    expect(screen.getAllByRole("heading").length).toEqual(5);
+    expect(screen.getAllByRole("link").length).toEqual(5);
   });
 });

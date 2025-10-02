@@ -6,6 +6,30 @@ const Projects = () => {
         <div className="project__container bd-container">
           <div>
             <h3>
+              Formalization, Implementation, and Verification of the Bluetooth
+              L2CAP State Machine
+            </h3>
+          </div>
+          <p className="project__text">
+            <u>Tan Khang Le</u>, Mohammad Omidvar Tehrani, Yuepeng Wang,
+            Jianliang Wu, and Steven Y. Ko; in{" "}
+            <i>
+              Proceedings of the 31st Annual International Conference on Mobile
+              Computing and Networking (MobiCom)
+            </i>
+            , Hong Kong, 2025. [
+            <a
+              className="external__link"
+              href="https://summit.sfu.ca/item/39483"
+            >
+              thesis
+            </a>
+            ]
+          </p>
+        </div>
+        <div className="project__container bd-container">
+          <div>
+            <h3>
               A Study of Vulnerability Repair in JavaScript Programs with Large
               Language Models
             </h3>
