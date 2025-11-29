@@ -20,9 +20,9 @@ const Projects = () => {
             , Hong Kong, 2025. [
             <a
               className="external__link"
-              href="https://summit.sfu.ca/item/39483"
+              href="https://doi.org/10.1145/3680207.3765254"
             >
-              thesis
+              paper
             </a>
             ]
           </p>
