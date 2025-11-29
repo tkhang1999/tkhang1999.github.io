@@ -24,9 +24,9 @@ const Work = () => {
             </p>
           </div>
           <p className="work__text">
-            Designed and built high-performance microservices processing 10M+
-            payment collection transactions monthly, ensuring seamless operation
-            and improved customer experience.
+            Designed and built high-performance microservices processing
+            millions of payment collection transactions monthly, ensuring
+            seamless operation and improved customer experience.
             <br />
             <br />
             <i>Tech stack: AWS, Java, TypeScript, Spring</i>
