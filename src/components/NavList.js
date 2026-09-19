@@ -14,9 +14,29 @@ const NavList = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    const isDark = localStorage.getItem("selected-theme") === "dark";
+    const savedTheme = localStorage.getItem("selected-theme");
+    const mediaQuery = window.matchMedia?.("(prefers-color-scheme: dark)");
+    const isDark = savedTheme
+      ? savedTheme === "dark"
+      : (mediaQuery?.matches ?? false);
+
     setIsDarkTheme(isDark);
     document.body.classList[isDark ? "add" : "remove"]("dark__theme");
+
+    if (savedTheme || !mediaQuery) {
+      return undefined;
+    }
+
+    const handleSystemThemeChange = (event) => {
+      setIsDarkTheme(event.matches);
+      document.body.classList.toggle("dark__theme", event.matches);
+    };
+
+    mediaQuery?.addEventListener("change", handleSystemThemeChange);
+
+    return () => {
+      mediaQuery?.removeEventListener("change", handleSystemThemeChange);
+    };
   }, []);
 
   const toggleDarkTheme = (isDark) => {
