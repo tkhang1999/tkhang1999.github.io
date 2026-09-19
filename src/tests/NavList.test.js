@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 
 import NavList, { navItems } from "../components/NavList";
 
@@ -66,5 +66,40 @@ describe("test NavList component", () => {
 
       cleanup();
     });
+  });
+
+  test("follows system theme changes", () => {
+    jest.restoreAllMocks();
+
+    const originalMatchMedia = window.matchMedia;
+    const changeListeners = {};
+    const mediaQuery = {
+      matches: false,
+      addEventListener: jest.fn((event, listener) => {
+        changeListeners[event] = listener;
+      }),
+      removeEventListener: jest.fn(),
+    };
+
+    window.matchMedia = jest.fn(() => mediaQuery);
+    localStorage.removeItem("selected-theme");
+
+    const { unmount } = render(<NavList />);
+    const themeToggle = screen.getByRole("checkbox");
+
+    act(() => {
+      changeListeners.change({ matches: true });
+    });
+
+    expect(themeToggle.checked).toBe(true);
+    expect(document.body.classList.contains("dark__theme")).toBe(true);
+
+    unmount();
+
+    expect(mediaQuery.removeEventListener).toHaveBeenCalledWith(
+      "change",
+      changeListeners.change,
+    );
+    window.matchMedia = originalMatchMedia;
   });
 });
