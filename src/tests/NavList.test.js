@@ -68,38 +68,60 @@ describe("test NavList component", () => {
     });
   });
 
-  test("follows system theme changes", () => {
+  test("uses the system theme when no theme is selected", () => {
     jest.restoreAllMocks();
 
     const originalMatchMedia = window.matchMedia;
-    const changeListeners = {};
     const mediaQuery = {
-      matches: false,
-      addEventListener: jest.fn((event, listener) => {
-        changeListeners[event] = listener;
-      }),
-      removeEventListener: jest.fn(),
+      matches: true,
+      onchange: null,
     };
 
     window.matchMedia = jest.fn(() => mediaQuery);
     localStorage.removeItem("selected-theme");
 
-    const { unmount } = render(<NavList />);
+    render(<NavList />);
     const themeToggle = screen.getByRole("checkbox");
 
+    expect(themeToggle.checked).toBe(true);
+    expect(document.body.classList.contains("dark__theme")).toBe(true);
+
     act(() => {
-      changeListeners.change({ matches: true });
+      mediaQuery.onchange({ matches: false });
+    });
+
+    expect(themeToggle.checked).toBe(false);
+    expect(document.body.classList.contains("dark__theme")).toBe(false);
+
+    window.matchMedia = originalMatchMedia;
+  });
+
+  test("keeps the user-selected theme when the system theme changes", () => {
+    jest.restoreAllMocks();
+
+    const originalMatchMedia = window.matchMedia;
+    const mediaQuery = {
+      matches: false,
+      onchange: null,
+    };
+
+    window.matchMedia = jest.fn(() => mediaQuery);
+    localStorage.removeItem("selected-theme");
+
+    const firstRender = render(<NavList />);
+    const themeToggle = screen.getByRole("checkbox");
+
+    fireEvent.click(themeToggle);
+    expect(localStorage.getItem("selected-theme")).toBe("dark");
+
+    act(() => {
+      mediaQuery.onchange({ matches: false });
     });
 
     expect(themeToggle.checked).toBe(true);
     expect(document.body.classList.contains("dark__theme")).toBe(true);
 
-    unmount();
-
-    expect(mediaQuery.removeEventListener).toHaveBeenCalledWith(
-      "change",
-      changeListeners.change,
-    );
+    firstRender.unmount();
     window.matchMedia = originalMatchMedia;
   });
 });
