@@ -414,6 +414,13 @@ body.dark__theme {
 }
 
 /* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 576px) {
+  .home__img {
+    bottom: 5%;
+    width: 369px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
@@ -473,7 +480,7 @@ body.dark__theme {
   }
   .home__img {
     width: 457px;
-    bottom: 15%;
+    bottom: 10%;
   }
 
   .about__container,
@@ -509,5 +516,6 @@ body.dark__theme {
   }
   .home__img {
     right: 10%;
+    bottom: 15%;
   }
 }
