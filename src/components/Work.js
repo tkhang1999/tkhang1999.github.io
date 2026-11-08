@@ -26,7 +26,7 @@ const Work = () => {
           <p className="work__text">
             Design and build scalable, fault-tolerant microservices powering AWS
             payment collections, processing millions of transactions monthly
-            while ensuring reliable, seamless payment experiences for customers.
+            while ensuring reliable, seamless customer experiences.
             <br />
             <br />
             <i>Tech stack: AWS, Java, TypeScript, Spring</i>
