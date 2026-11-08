@@ -21,7 +21,9 @@ const NavList = () => {
       document.body.classList.toggle("dark__theme", isDark);
     };
 
-    applyTheme(savedTheme ? savedTheme === "dark" : (mediaQuery?.matches ?? false));
+    applyTheme(
+      savedTheme ? savedTheme === "dark" : (mediaQuery?.matches ?? false),
+    );
 
     if (!savedTheme && mediaQuery) {
       mediaQuery.onchange = ({ matches }) => {
